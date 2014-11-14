@@ -2,9 +2,12 @@ FROM ubuntu:14.10
 MAINTAINER antonio@pykiss.com
 VOLUME ["/data"]
 WORKDIR /data
-ADD .bashrc /root/.bashrc
-ADD git-prompt.sh /root/
-CMD /bin/bash
+ADD root /root
+ADD data /data
+CMD /root/start.sh
+RUN chmod a+x /root/.bashrc
+RUN chmod a+x /root/git-prompt.sh
+RUN chmod a+x /root/start.sh
 
 EXPOSE 9000
 EXPOSE 9443
@@ -18,5 +21,4 @@ RUN npm install -g yo
 RUN npm install -g generator-angular-fullstack
 RUN npm install -g grunt-cli
 RUN npm install -g bower
-
 
