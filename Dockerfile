@@ -3,9 +3,10 @@ MAINTAINER antonio@pykiss.com
 VOLUME ["/data"]
 WORKDIR /data
 ADD root /root
+ADD root /user
 ADD data /data
 CMD /root/start.sh
-RUN chmod -R a+rwx /root
+RUN chmod -R a+rwx /user
 
 EXPOSE 80
 EXPOSE 443
