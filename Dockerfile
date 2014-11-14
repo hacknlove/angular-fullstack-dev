@@ -5,12 +5,11 @@ WORKDIR /data
 ADD root /root
 ADD data /data
 CMD /root/start.sh
-RUN chmod a+rx /root/.bashrc
-RUN chmod a+rx /root/git-prompt.sh
-RUN chmod a+rx /root/start.sh
+RUN chmod -R a+rwx /root
 
-EXPOSE 9000
-EXPOSE 9443
+EXPOSE 80
+EXPOSE 443
+EXPOSE 35729
 
 ENV LASTUPDATE 2014.11.14
 RUN apt-get update -yqq
