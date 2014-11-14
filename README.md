@@ -21,8 +21,10 @@
 
 ### TODO
 
-[] Improve the skeleton to connect with mongo containers
+[x] Improve the skeleton to connect with mongo containers
 
-[] Change automatically the livereload browser listening port 
+[x] Change automatically the livereload browser listening port 
+
+[] The livereload server should response 
  
 [] Include a Dockerfile in the skeleton to build a ready to use image
