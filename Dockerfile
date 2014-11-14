@@ -5,9 +5,9 @@ WORKDIR /data
 ADD root /root
 ADD data /data
 CMD /root/start.sh
-RUN chmod a+x /root/.bashrc
-RUN chmod a+x /root/git-prompt.sh
-RUN chmod a+x /root/start.sh
+RUN chmod a+rx /root/.bashrc
+RUN chmod a+rx /root/git-prompt.sh
+RUN chmod a+rx /root/start.sh
 
 EXPOSE 9000
 EXPOSE 9443
