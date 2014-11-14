@@ -16,9 +16,13 @@ require('./config/express')(app);
 require('./routes')(app);
 
 // Start server
-server.listen(config.port, config.ip, function () {
-  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+server.listen(8080, function () {
+  console.log('Express server listening on %d, in %s mode', app.get('env'));
 });
+
+var mongoHost = process.env.MONGO_PORT_27017_TCP_ADDR,
+mongoPort = process.env.MONGO_PORT_27017_TCP_PORT;
+
 
 // Expose app
 exports = module.exports = app;
