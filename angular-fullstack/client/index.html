@@ -21,13 +21,13 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="dataApp">
+  <body ng-app="<%= scriptAppName %>">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view=""></div>
+    <% if(filters.ngroute) { %><div ng-view=""></div><% } %><% if(filters.uirouter) { %><div ui-view=""></div><% } %>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -46,7 +46,8 @@
     <![endif]-->
     <!-- build:js({client,node_modules}) app/vendor.js -->
       <!-- bower:js -->
-      <!-- endbower -->
+      <!-- endbower --><% if(filters.socketio) { %>
+      <script src="socket.io-client/socket.io.js"></script><% } %>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,client}) app/app.js -->

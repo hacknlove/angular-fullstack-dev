@@ -1,0 +1,8 @@
+.[a-z]*
+data
+client
+e2e
+Gruntfile.js
+Karma.conf.js
+package.json
+protractor.conf.js

@@ -36,5 +36,10 @@ database.connect({tufiesta:{url:'mongodb://'+mongoHost+':'+mongoPort+'/data'}})
   console.log('----------------------------')
 });
 
+process.on('SIGTERM', function () {
+  server.close(function () {
+    process.exit(0);
+  });
+});
 
 exports = module.exports = app;

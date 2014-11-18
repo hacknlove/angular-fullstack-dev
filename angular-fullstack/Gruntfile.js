@@ -70,7 +70,7 @@ module.exports = function (grunt) {
         tasks: ['injector:css']
       },
       mochaTest: {
-        files: ['server/**/*.spec.js'],
+        files: ['server/**/*.js'],
         tasks: ['env:test', 'mochaTest']
       },
       jsTest: {
@@ -86,6 +86,7 @@ module.exports = function (grunt) {
         tasks: ['injector:sass']
       },
       sass: {
+        compass: true,
         files: [
           '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
         tasks: ['sass', 'autoprefixer']
