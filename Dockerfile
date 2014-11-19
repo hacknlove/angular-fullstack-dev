@@ -9,7 +9,6 @@ CMD /user/start.sh
 RUN chmod -R a+rwx /user
 
 EXPOSE 8080
-EXPOSE 443
 EXPOSE 35729
 
 ENV LASTUPDATE 2014.11.14
